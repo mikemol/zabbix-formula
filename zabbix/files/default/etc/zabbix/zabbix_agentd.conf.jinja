@@ -152,7 +152,7 @@ Hostname={{ settings.get('hostname', salt['grains.get']('id')) }}
 #	the value returned by specified item is over limit of 255 characters.
 #	This option is only used when HostMetadata is not defined.
 #
-{% if settings.get('hostmetadataitem', false) %}HostMetadataItem={{ settings.get('hostmetadataitem') }}{% endif %}
+{% if settings.get('hostmetadataitem', false) %}HostMetadataItem={{ flexjoin(settings.get('hostmetadataitem'), ' ') }}{% endif %}
 
 ### Option: RefreshActiveChecks
 #	How often list of active checks is refreshed, in seconds.
